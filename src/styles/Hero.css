@@ -1,0 +1,203 @@
+/* General Styles */
+.hero-section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  position: relative; /* For positioning the iPhone mockup */
+  gap: 10rem; /* Space between hero-text and iPhone mockup */
+}
+
+/* Hero Text */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  gap: 1rem; /* Adjust the gap between items */
+}
+
+.hero-text .btn {
+  margin: 0; /* Reset margins if any */
+}
+
+/* Center content inside hero-text */
+.hero-text h1 {
+  font-size: 4rem; /* Adjust for your preferred size */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 2rem; /* Adjust font size for the paragraph */
+  margin-bottom: 0 rem;
+  font-weight: bold;
+
+ 
+}
+
+.phone-content h1{
+  font-size: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', Helvetica, Arial, sans-serif;
+}
+
+/* iPhone Mockup Container */
+.iphone-container {
+  width: 300px; /* Width of the iPhone */
+  height: 600px; /* Height of the iPhone */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1500px; /* Creates a perspective for the 3D effect */
+}
+
+/* Outer Border */
+.iphone-mockup {
+  width: 100%;
+  height: 100%;
+  background: var(--background-color,#333); /* Light and dark mode colors are handled by CSS variables */
+  border-radius: 36px; /* Rounded corners */
+  border: 3px solid var(--border-color, #000000); /* Outer border color */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  position: relative; /* Make sure positioning is relative */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(-10deg) rotateX(0deg); /* Initial tilt */
+  transform-origin: center; /* Pivot the rotation from the center */
+  transition: transform 1s ease, background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Dark Mode Overrides */
+.dark-mode .iphone-mockup {
+  background: var(--dark-background-color, #333); /* Dark mode background */
+  border: 3px solid var(--dark-border-color, #666); /* Dark mode border color */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Dark mode shadow effect */
+}
+
+/* Inner Screen Border */
+.iphone-screen {
+  width: calc(100% - 20px); /* Adjust to fit inside the mockup */
+  height: calc(100% - 20px); /* Adjust to fit inside the mockup */
+  border: 8px solid var(--screen-border-color); /* Inner border color */
+  border-radius: 28px; /* Rounded corners for the screen */
+  background: var(--background-color); /* Match background color */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  position: relative; /* For positioning the camera */
+  font-family: 'Roboto', sans-serif; /* Custom font */
+  color: #333; /* Text color inside the screen */
+  padding: 1rem; /* Padding inside the screen */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+
+/* Content inside the phone screen */
+.iphone-screen h1, .iphone-screen p {
+  margin: 0;
+  padding: 0;
+}
+
+.iphone-screen h1 {
+  font-size: 2rem; /* Adjust font size for the heading */
+  font-weight: bold;
+  color: #e4e4e4; /* Text color for the heading */
+  padding-right: 2px;
+}
+
+.iphone-screen p {
+  font-size: 1rem; /* Adjust font size for the paragraph */
+  color: #555; /* Text color for the paragraph */
+  padding-left: 2px;
+}
+
+/* Camera Design */
+.iphone-mockup::before {
+  content: "";
+  position: absolute;
+  top: 20px; /* Position from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* Width of the camera */
+  height: 6px; /* Height of the camera */
+  background: #333; /* Camera color */
+  border-radius: 3px; /* Rounded corners */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+/* Hover Effect */
+.iphone-mockup:hover {
+  transform: rotateY(-30deg) rotateX(40deg); /* Rotate when hovered */
+
+}
+
+
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--btn-primary-background-light, #161616);
+  color: var(--btn-primary-color-light, #ffffff);
+  margin-right: 1rem; /* Adjust this value to control the gap */
+}
+/* Primary Button Hover */
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover-background-light, #07224e);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: var(--btn-secondary-background-light, #000000);
+  color: var(--btn-secondary-color-light, #fff);
+}
+
+/* Secondary Button Hover */
+.btn-secondary:hover {
+  background-color: var(--btn-secondary-hover-background-light, #333);
+  transform: translateY(-2px);
+}
+
+/* Adjust Gap Between Buttons */
+.btn + .btn {
+  margin-left: 1rem; /* Adjust the spacing as needed */
+}
+
+/* Dark Mode Overrides */
+.dark-mode .btn-primary {
+  background-color: var(--btn-primary-background-dark, #4c4c4c); /* Dark mode */
+  color: var(--btn-primary-color-dark, #000000); /* Dark mode */
+}
+
+.dark-mode .btn-primary:hover {
+  background-color: var(--btn-primary-hover-background-dark, #ffffff); /* Dark mode */
+}
+
+.dark-mode .btn-secondary {
+  background-color: var(--btn-secondary-background-dark, #4c4c4c); /* Dark mode */
+  color: var(--btn-secondary-color-dark, #000000); /* Dark mode */
+}
+
+.dark-mode .btn-secondary:hover {
+  background-color: var(--btn-secondary-hover-background-dark, #ffffff); /* Dark mode */
+}
+
+/* Responsive Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

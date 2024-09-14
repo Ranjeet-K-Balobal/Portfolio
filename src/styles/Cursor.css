@@ -1,0 +1,60 @@
+/* Main cursor (real-time) */
+.main-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--cursor-color, black);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+  /* Trailing cursor (delayed) */
+  .trailing-element {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Trailing animation */
+  .trailing-element:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .trailing-element:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Light mode */
+  [data-theme='light'] .main-cursor {
+    background-color: black;
+  }
+  
+  [data-theme='light'] .trailing-element {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dark mode */
+  [data-theme='dark'] .main-cursor {
+    background-color: white;
+  }
+  
+  [data-theme='dark'] .trailing-element {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  

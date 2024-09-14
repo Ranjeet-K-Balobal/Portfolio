@@ -1,0 +1,96 @@
+/* General Styling for Contact Section */
+.contact-section {
+  padding: 50px;
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 3rem;
+  font-family: 'Roboto', sans-serif; /* Consistent font-family */
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: var(--text-muted-color);
+}
+
+.contact-form {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto; /* Center the form */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form elements */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px; /* Space between columns */
+}
+
+.form-group {
+  flex: 1; /* Allow fields to grow equally */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 5px; /* Space between label and input */
+  text-align: left;
+}
+
+/* Light Mode */
+.form-group input,
+textarea {
+  background-color: var(--input-bg-color-light, #ffffff);
+  color: var(--input-text-color-light, #333333);
+  border: 1px solid var(--input-border-color-light, #cccccc);
+}
+
+/* Dark Mode */
+.dark-mode .form-group input,
+.dark-mode textarea {
+  background-color: var(--input-bg-color-dark, #333333);
+  color: var(--input-text-color-dark, #ffffff);
+  border: 1px solid var(--input-border-color-dark, #555555);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+.contact-form button {
+  background-color: var(--btn-primary-background-light, #161616);
+  color: var(--btn-primary-color-light, #ffffff);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--btn-primary-hover-background-light, #000000);
+  transform: translateY(-2px);
+}
+
+.dark-mode .contact-form button {
+  background-color: var(--btn-primary-background-dark, #4c4c4c);
+  color: var(--btn-primary-color-dark, #000000);
+}
+
+.dark-mode .contact-form button:hover {
+  background-color: var(--btn-primary-hover-background-dark, #ffffff);
+}
